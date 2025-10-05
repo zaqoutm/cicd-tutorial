@@ -1,0 +1,11 @@
+name: After build ends
+on:
+  workflow_run:
+    workflows: [ "Java CI" ]
+    types:
+      - completed
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build ends."
