@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository }}:latest .
+        run: docker build -t ghcr.io/${{ github.repository }}:latest -f Dockerfile .
 
       - name: Save Docker image as tar
         run: docker save ghcr.io/${{ github.repository }}:latest -o my-app.tar
